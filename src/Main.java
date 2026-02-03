@@ -11,8 +11,13 @@ class Main {
                     rubrica.aggiungiContatto(c);
                     break;
                 case 2:
-                    int indice=menu.leggiIndice();
-                    rubrica.eliminaContatto(indice);
+                    String nome = menu.leggiNome();
+                    boolean eliminato = rubrica.eliminaContatto(nome);
+                    if (eliminato) {
+                        System.out.println("Eliminazione avvenuta con successo.");
+                    } else {
+                        System.out.println("Contatto non trovato.");
+                    }
                     break;
                 case 3:
                     rubrica.visualizzaRubrica();

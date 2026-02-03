@@ -11,6 +11,11 @@ public class Contatto {
         System.out.print("Telefono: ");
         telefono= scanner.nextLine();
     }
+
+    public String getNome() {
+        return nome;
+    }
+
     public String toString() {
         return nome + " - " + telefono;
     }

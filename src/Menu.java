@@ -13,8 +13,9 @@ public class Menu {
         System.out.print("\n-> ");
         return tastiera.nextInt();
     }
-    public int leggiIndice(){
-        System.out.print("\nContatto da eliminare: ");
-        return tastiera.nextInt();
+    public String leggiNome() {
+        tastiera.nextLine();
+        System.out.print("Nome del contatto da eliminare: ");
+        return tastiera.nextLine();
     }
 }

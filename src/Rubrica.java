@@ -8,18 +8,19 @@ public class Rubrica {
     public void aggiungiContatto(Contatto c) {
         contatti.add(c);
     }
-    public void eliminaContatto(int indice) {
-        if (indice < 0 || indice >= contatti.size()) {
-            System.out.println("Indice non valido.");
-            return;
+    public boolean eliminaContatto(String nome) {
+        for (int i = 0; i < contatti.size(); i++) {
+            Contatto c = (Contatto) contatti.elementAt(i);
+            if (c.getNome().equals(nome)) {
+                contatti.remove(i);
+                return true;
+            }
         }
-        contatti.remove(indice);
-        System.out.println("Eliminazione avvenuta con successo.");
+        return false;
     }
     public void visualizzaRubrica() {
         System.out.println("\nRubrica telefonica");
         for (int i = 0; i < contatti.size(); i++) {
-            System.out.print("Posizione " + i + ": ");
             Contatto c = (Contatto) contatti.elementAt(i);
             System.out.println(c);
         }
